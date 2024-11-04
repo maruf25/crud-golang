@@ -29,6 +29,8 @@ func main() {
 
 	routes.AuthRoutes(r)
 	routes.ProductRoute(r)
+	routes.CartRoute(r)
+	routes.TransactionRoute(r)
 
 	config.ConnectDB()
 

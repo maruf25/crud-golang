@@ -6,7 +6,8 @@ var SecretKey = []byte("kuncirahasiaJWTKEY12361q2*")
 var KunciRahasia = "asdasdasdas*"
 
 type JWTClaim struct {
-	Email string `json:"email"`
-	Role  string `json:"role"`
+	UserId int    `json:"userId"`
+	Email  string `json:"email"`
+	Role   string `json:"role"`
 	jwt.RegisteredClaims
 }

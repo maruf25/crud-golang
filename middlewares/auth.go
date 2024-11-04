@@ -55,6 +55,7 @@ func AuthMiddleware(allowedRole []models.Role) gin.HandlerFunc {
 		}
 
 		c.Set("email", claim.Email)
+		c.Set("userId", claim.UserId)
 
 		c.Next()
 	}

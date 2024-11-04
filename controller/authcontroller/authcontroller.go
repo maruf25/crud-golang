@@ -78,8 +78,9 @@ func Login(c *gin.Context) {
 	// Generate token
 	expTime := time.Now().Add(time.Hour + 1)
 	claims := &config.JWTClaim{
-		Email: existingUser.Email,
-		Role:  string(existingUser.Role),
+		UserId: existingUser.Id,
+		Email:  existingUser.Email,
+		Role:   string(existingUser.Role),
 		RegisteredClaims: jwt.RegisteredClaims{
 			Issuer:    "ecom-jwt",
 			ExpiresAt: jwt.NewNumericDate(expTime),

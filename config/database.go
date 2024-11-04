@@ -18,7 +18,9 @@ func ConnectDB() {
 		panic(err)
 	}
 
-	db.AutoMigrate(&models.User{}, &models.Product{}, &models.Transaction{})
+	// db.Migrator().DropTable(&models.User{}, &models.Product{}, &models.Transaction{}, &models.Cart{}, &models.TransactionItem{})
+
+	db.AutoMigrate(&models.User{}, &models.Product{}, &models.Transaction{}, &models.Cart{}, &models.TransactionItem{})
 
 	log.Println("Connect Database")
 
